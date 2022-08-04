@@ -3,21 +3,23 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import logo from '../../assets/images/castle02.png'
 import userPic from '../../assets/images/logo03.jpg'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/actions/users';
+import Typography from "@mui/material/Typography";
 
 
-const settings = ['Profile', 'Account', 'Logout'];
 const NavigationBar = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -34,6 +36,13 @@ const NavigationBar = () => {
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
+    };
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate("/farewell");
+    };
+    const handleProfile = () => {        
+        navigate("/profile");
     };
 
     return (
@@ -76,11 +85,15 @@ const NavigationBar = () => {
                             <MenuItem key="characters" onClick={handleCloseNavMenu}>
                                 <NavLink to='/characters'>Characters</NavLink>
                             </MenuItem>
-
+                            <MenuItem key="users" onClick={handleCloseNavMenu}>
+                                <NavLink to='/users'>Users</NavLink>
+                            </MenuItem>
                             <MenuItem key="login" onClick={handleCloseNavMenu}>
                                 <NavLink to='/login'>Login</NavLink>
                             </MenuItem>
-
+                            <MenuItem key="register" onClick={handleCloseNavMenu}>
+                                <NavLink to='/register'>Register</NavLink>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
@@ -93,13 +106,16 @@ const NavigationBar = () => {
                         <MenuItem key="characters2" onClick={handleCloseNavMenu}>
                             <NavLink to='/characters'>Characters</NavLink>
                         </MenuItem>
-
+                        <MenuItem key="users2" onClick={handleCloseNavMenu}>
+                            <NavLink to='/users'>Users</NavLink>
+                        </MenuItem>
                         <MenuItem key="login2" onClick={handleCloseNavMenu}>
                             <NavLink to='/login'>Login</NavLink>
                         </MenuItem>
-
+                        <MenuItem key="register2" onClick={handleCloseNavMenu}>
+                            <NavLink to='/register'>Register</NavLink>
+                        </MenuItem>
                         <MenuItem key="close" onClick={handleCloseNavMenu}>
-
                         </MenuItem>
                     </Box>
 
@@ -125,11 +141,15 @@ const NavigationBar = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography>{setting}</Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem onClick={handleCloseUserMenu}>
+                                <Typography className='settings' onClick={handleProfile}>Profile</Typography>
+                            </MenuItem>
+
+                            <MenuItem onClick={handleCloseUserMenu}>
+                                <Typography className='settings' onClick={handleLogout}>Logout</Typography>
+                            </MenuItem>
+
+
                         </Menu>
                     </Box>
                 </Toolbar>
