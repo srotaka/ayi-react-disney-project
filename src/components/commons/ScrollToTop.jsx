@@ -24,7 +24,7 @@ const ScrollToTop = () => {
             {" "}
             {showTopBtn && (
                 <KeyboardDoubleArrowUpIcon
-                    className="icon-position icon-style"
+                    className="icon-position to-top-style"
                     onClick={goToTop}
                 />
             )}{" "}
