@@ -1,10 +1,13 @@
 import {
     GET_CHARACTERS_ERROR,    
     GET_CHARACTERS_SUCCESS,
+    GET_USERS_SUCCESS,
+    GET_USERS_ERROR, 
   } from '../types/actionTypes';
   
   const initialState = {
     characters: [],
+    users: [],
     error: null,
   };
   
@@ -20,6 +23,16 @@ import {
           ...state,
           error: action.payload,
         };
+        case GET_USERS_SUCCESS:
+          return {
+            ...state,
+            users: action.payload,
+          };      
+        case GET_USERS_ERROR:
+          return {
+            ...state,
+            error: action.payload,
+          };  
       default:
         return state;
     }

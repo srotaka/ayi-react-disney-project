@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 
 const style = {
     position: 'absolute',
@@ -18,14 +19,14 @@ const style = {
     p: 4,
   };
 
-export default function CharacterModal({name, films, shortFilms}) {
+export default function UsersModal({firstname, lastname, email, username, phone, city,street, number}) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
   return (
     <div>
-     <Button onClick={handleOpen}>More Info</Button>
+     <Button onClick={handleOpen} id='modal-button'>More Info</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -39,15 +40,28 @@ export default function CharacterModal({name, films, shortFilms}) {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-            <strong>{name}</strong>
+            <Typography id="transition-modal-title" variant="h6" component="h2" className='capitalize-text'>
+            <strong>{firstname} {lastname}</strong>
             </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-             <strong> Films:</strong> {films} 
-             
+            <Divider />
+            <Typography sx={{ mt: 2 }}>
+             <strong> Email:</strong> {email}              
             </Typography>
-            <Typography id="transition-modal-description2" sx={{ mt: 2 }}>
-            <strong>Short Films: </strong>{shortFilms}
+
+            <Typography sx={{ mt: 2 }}>
+            <strong>Username: </strong>{username}
+            </Typography>
+
+            <Typography sx={{ mt: 2 }}>
+            <strong>Phone: </strong>{phone}
+            </Typography>
+
+            <Typography className='capitalize-text' sx={{ mt: 2 }}>
+            <strong>Address: </strong>{street} {number}
+            </Typography>
+
+            <Typography className='capitalize-text' sx={{ mt: 2 }}>
+            <strong>City: </strong>{city}
             </Typography>
           </Box>
         </Fade>
