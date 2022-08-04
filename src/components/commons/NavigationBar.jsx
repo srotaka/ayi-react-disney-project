@@ -80,19 +80,19 @@ const NavigationBar = () => {
                             }}
                         >
                             <MenuItem key="home" onClick={handleCloseNavMenu}>
-                                <NavLink to='/'>Home</NavLink>
+                                <NavLink to='/' className='navbarhover'>Home</NavLink>
                             </MenuItem>
                             <MenuItem key="characters" onClick={handleCloseNavMenu}>
-                                <NavLink to='/characters'>Characters</NavLink>
+                                <NavLink to='/characters' className='navbarhover'>Characters</NavLink>
                             </MenuItem>
                             <MenuItem key="users" onClick={handleCloseNavMenu}>
-                                <NavLink to='/users'>Users</NavLink>
+                                <NavLink to='/users' className='navbarhover'>Users</NavLink>
                             </MenuItem>
                             <MenuItem key="login" onClick={handleCloseNavMenu}>
-                                <NavLink to='/login'>Login</NavLink>
+                                <NavLink to='/login' className='navbarhover'>Login</NavLink>
                             </MenuItem>
                             <MenuItem key="register" onClick={handleCloseNavMenu}>
-                                <NavLink to='/register'>Register</NavLink>
+                                <NavLink to='/register' className='navbarhover'>Register</NavLink>
                             </MenuItem>
                         </Menu>
                     </Box>
@@ -100,20 +100,20 @@ const NavigationBar = () => {
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <MenuItem key="home2" onClick={handleCloseNavMenu}>
-                            <NavLink to='/'>Home</NavLink>
+                            <NavLink to='/' className='navbarhover'>Home</NavLink>
                         </MenuItem>
 
                         <MenuItem key="characters2" onClick={handleCloseNavMenu}>
-                            <NavLink to='/characters'>Characters</NavLink>
+                            <NavLink to='/characters' className='navbarhover'>Characters</NavLink>
                         </MenuItem>
                         <MenuItem key="users2" onClick={handleCloseNavMenu}>
-                            <NavLink to='/users'>Users</NavLink>
+                            <NavLink to='/users' className='navbarhover'>Users</NavLink>
                         </MenuItem>
                         <MenuItem key="login2" onClick={handleCloseNavMenu}>
-                            <NavLink to='/login'>Login</NavLink>
+                            <NavLink to='/login' className='navbarhover'>Login</NavLink>
                         </MenuItem>
                         <MenuItem key="register2" onClick={handleCloseNavMenu}>
-                            <NavLink to='/register'>Register</NavLink>
+                            <NavLink to='/register' className='navbarhover'>Register</NavLink>
                         </MenuItem>
                         <MenuItem key="close" onClick={handleCloseNavMenu}>
                         </MenuItem>

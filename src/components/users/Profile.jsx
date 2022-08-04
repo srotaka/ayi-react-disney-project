@@ -125,7 +125,7 @@ export default function Profile() {
           </Typography>
 
           <MenuItem key="home">
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/' className='navbarhover'>Home</NavLink>
           </MenuItem>
         </Toolbar>
       </AppBar>
@@ -187,8 +187,8 @@ export default function Profile() {
         </List>
       </Drawer>
       
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <h1 className='profile-title'>My Favourite Chracters</h1>
+      <Box component="main" sx={{ flexGrow: 1, p: 3}} className='profile-table'>
+      <h1 className='profile-title'>My Favourite Characters</h1>
         <DrawerHeader />
        
         <UserTable />

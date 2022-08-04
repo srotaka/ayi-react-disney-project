@@ -37,22 +37,22 @@ body {
   background-color: black;
 }
 /* --- Navbar --- */
- li a {
+ li .navbarhover {
   text-decoration: none;
   color: black;
   font-weight: 600;
   font-size: 1.1rem;
 } 
-a:hover, a:focus, a:active {
+.navbarhover:hover, .navbarhover:focus, .navbarhover:active {
     color: rgb(255, 255, 255);
     text-decoration: none;    
 }
-a {   
+.navbarhover {   
     text-decoration: none;
     transition: color 0.1s, background-color 0.1s;
     font-weight: 600;    
 }
-a {
+.navbarhover {
     position: relative;
     display: block;
     padding: 16px 0;
@@ -65,7 +65,7 @@ a {
     transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
     color: #000;
 }
-a::before {
+.navbarhover::before {
     content: '';
     display: block;
     position: absolute;
@@ -78,10 +78,10 @@ a::before {
     transform: scale(0, 1);
     transition: color 0.1s,transform 0.2s ease-out;
 }
-a:active::before {
+.navbarhover:active::before {
     background-color: #000;
 }
-a:hover::before, a:focus::before {
+.navbarhover:hover::before, .navbarhover:focus::before {
     transform-origin: left top;
     transform: scale(1, 1);
 }
@@ -154,12 +154,20 @@ a:hover::before, a:focus::before {
   background-color: #f10002 !important;
 }
 
+.css-hyum1k-MuiToolbar-root{
+  background-color: #f10002 !important;
+}
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
   color:#ffffff !important;
   background-color: #000 !important;
 }
 
-
+.css-78trlr-MuiButtonBase-root-MuiIconButton-root{
+  color: #ffffff !important;
+}
+.css-9mgopn-MuiDivider-root{
+  border-color:  #ffffff !important;
+}
 .MuiTablePagination-actions .css-i4bv87-MuiSvgIcon-root{
   color:#000;
 }
@@ -167,8 +175,11 @@ a:hover::before, a:focus::before {
 .MuiDataGrid-columnHeaderTitleContainer .MuiDataGrid-columnHeaderTitleContainerContent .css-i4bv87-MuiSvgIcon-root {
   color:#000 !important;
 }
+.css-p55zm9-MuiButtonBase-root-MuiIconButton-root .css-i4bv87-MuiSvgIcon-root {
+  color:#ffffff !important;
+}
 .css-i4bv87-MuiSvgIcon-root {
-  color:#000 !important;
+  color:#f50707 !important;
 }
 
 .css-h4y409-MuiList-root .css-i4bv87-MuiSvgIcon-root{
@@ -185,10 +196,21 @@ a:hover::before, a:focus::before {
   text-align: center;
 }
 
-.myTable{
-  padding-bottom: 20px;  
+.profile-table{
+  padding-bottom: 40px;  
 }
 
+.table-link{
+  text-transform: none;
+  font-weight: 500;
+  font-size: 13px;
+  color:rgb(56, 91, 248);
+}
+
+.table-head{
+  font-weight: 700 !important;
+  font-size: 22px !important;
+}
 /* --- Scroll To Top --- */
 .top-to-btm{
   position: relative;
@@ -199,21 +221,18 @@ a:hover::before, a:focus::before {
   right: 25px;
   z-index: 20;
 }
-.icon-style{
+.to-top-style{
   background-color: #ffffff;
   border: 2px solid #fff;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 50px !important;
+  width: 50px !important;
   color: #fff;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
   transition: all .5s ease-in-out;  
 }
-.css-i4bv87-MuiSvgIcon-root{
-  height: 3rem !important;
-  width: 3rem !important;
-}
+
 .icon-style:hover{
   animation: none;
   background: #fff;
